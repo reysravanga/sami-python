@@ -14,7 +14,7 @@ Installation
 
 Once you have installed the required libraries add the scripts to your project.
 
-For a more complete list of examples see our demo application at https://github.com/samiio/sami-python-demo
+For a more complete list of examples see our demo application at https://github.com/samsungsamiio/sami-python-demo
 
 More about SAMI
 ---------------
