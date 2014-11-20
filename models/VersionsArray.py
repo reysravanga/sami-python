@@ -21,7 +21,7 @@ class VersionsArray:
 
     def __init__(self):
         self.swaggerTypes = {
-            'versions': 'list[integer]'
+            'versions': 'list[int]'
 
         }
 

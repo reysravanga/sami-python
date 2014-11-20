@@ -28,7 +28,7 @@ class NormalizedMessagesEnvelope:
             'endDate': 'long',
             'order': 'str',
             'next': 'str',
-            'count': 'integer',
+            'count': 'int',
             'size': 'long',
             'data': 'list[NormalizedMessage]'
 

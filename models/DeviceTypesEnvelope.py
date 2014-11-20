@@ -21,9 +21,9 @@ class DeviceTypesEnvelope:
 
     def __init__(self):
         self.swaggerTypes = {
-            'total': 'integer',
-            'count': 'integer',
-            'offset': 'integer',
+            'total': 'int',
+            'count': 'int',
+            'offset': 'int',
             'data': 'DeviceTypeArray'
 
         }

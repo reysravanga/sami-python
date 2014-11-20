@@ -25,7 +25,7 @@ class RawMessagesEnvelope:
             'mid': 'str',
             'startDate': 'long',
             'endDate': 'long',
-            'count': 'integer',
+            'count': 'int',
             'order': 'str',
             'size': 'long',
             'data': 'list[RawMessage]'

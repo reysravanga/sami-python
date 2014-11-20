@@ -178,7 +178,7 @@ class MessagesApi(object):
         headerParams = {}
 
         if ('sdids' in params):
-            queryParams['sdids'] = self.apiClient.toPathValue(params['sdids'])
+            queryParams['sdids'] = params['sdids']
         if ('fieldPresence' in params):
             queryParams['fieldPresence'] = self.apiClient.toPathValue(params['fieldPresence'])
         if ('count' in params):

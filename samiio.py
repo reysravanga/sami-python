@@ -36,8 +36,9 @@ class ApiClient:
             for param, value in headerParams.iteritems():
                 headers[param] = value
 
-        #headers['Content-type'] = 'application/json'
-        headers['api_key'] = self.apiKey
+        headers['Content-type'] = 'application/json'
+        #headers['api_key'] = self.apiKey
+        headers['Authorization'] = "Bearer %s" % self.apiKey
 
         if self.cookie:
             headers['Cookie'] = self.cookie
@@ -186,7 +187,7 @@ class ApiClient:
                     setattr(instance, attr, subValues)
                 else:
                     setattr(instance, attr, self.deserialize(value,
-                                                             objClass))
+                                                             attrType))
 
         return instance
 
