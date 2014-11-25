@@ -374,6 +374,110 @@ class MessagesApi(object):
 
         
 
+    def exportNormalizedMessages(self, **kwargs):
+        """Export Normalized messages
+
+        Args:
+            sdid, str: Source device ID of the messages being searched. (optional)
+
+            startDate, long: startDate (optional)
+
+            endDate, long: endDate (optional)
+
+            order, str: Desired sort order: 'asc' or 'desc' (optional)
+
+            format, str: Format the export will be returned as.  (optional)
+
+            
+
+        Returns: ExportEnvelope
+        """
+
+        allParams = ['sdid', 'startDate', 'endDate', 'order', 'format']
+
+        params = locals()
+        for (key, val) in params['kwargs'].iteritems():
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method exportNormalizedMessages" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/messages/export'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'GET'
+
+        queryParams = {}
+        headerParams = {}
+
+        if ('sdid' in params):
+            queryParams['sdid'] = self.apiClient.toPathValue(params['sdid'])
+        if ('startDate' in params):
+            queryParams['startDate'] = self.apiClient.toPathValue(params['startDate'])
+        if ('endDate' in params):
+            queryParams['endDate'] = self.apiClient.toPathValue(params['endDate'])
+        if ('order' in params):
+            queryParams['order'] = self.apiClient.toPathValue(params['order'])
+        if ('format' in params):
+            queryParams['format'] = self.apiClient.toPathValue(params['format'])
+        postData = (params['body'] if 'body' in params else None)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams)
+
+        if not response:
+            return None
+
+        responseObject = self.apiClient.deserialize(response, 'ExportEnvelope')
+        return responseObject
+        
+
+        
+
+    def checkExportStatus(self, exportId, **kwargs):
+        """Check status of the export query.
+
+        Args:
+            exportId, str: exportId (required)
+
+            
+
+        Returns: ExportStatusEnvelope
+        """
+
+        allParams = ['exportId']
+
+        params = locals()
+        for (key, val) in params['kwargs'].iteritems():
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method checkExportStatus" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/messages/export/{exportId}/status'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'GET'
+
+        queryParams = {}
+        headerParams = {}
+
+        if ('exportId' in params):
+            replacement = str(self.apiClient.toPathValue(params['exportId']))
+            resourcePath = resourcePath.replace('{' + 'exportId' + '}',
+                                                replacement)
+        postData = (params['body'] if 'body' in params else None)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams)
+
+        if not response:
+            return None
+
+        responseObject = self.apiClient.deserialize(response, 'ExportStatusEnvelope')
+        return responseObject
+        
+
+        
+
     
 
 
