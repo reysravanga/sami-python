@@ -1,7 +1,7 @@
 SAMI Python SDK
 ================
 
-This SDK helps you connect your Python scripts to SAMI. The SDK helps authenticating with SAMI, exposes a number of methods to easily execute REST API calls to SAMI and supports WebSockets. 
+This SDK helps you connect your Python scripts to SAMI. The SDK helps authenticating with SAMI, exposes a number of methods to easily execute REST API calls to SAMI. 
 
 Prerequisites
 -------------
