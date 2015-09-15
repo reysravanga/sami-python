@@ -28,7 +28,7 @@ class Device:
             'manifestVersion': 'long',
             'manifestVersionPolicy': 'str',
             'needProviderAuth': 'bool',
-            'properties': 'str',
+            'properties': 'object',
             'providerCredentials': 'str'
 
         }
@@ -39,8 +39,7 @@ class Device:
         self.dtid = None # str
         self.name = None # str
         self.manifestVersion = None # long
-        self.manifestVersionPolicy = None # str
+        self.manifestVersionPolicy = None # object
         self.needProviderAuth = None # bool
         self.properties = None # str
         self.providerCredentials = None # str
-        

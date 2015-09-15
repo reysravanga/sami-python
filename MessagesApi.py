@@ -28,7 +28,7 @@ class MessagesApi(object):
     def __init__(self, apiClient):
       self.apiClient = apiClient
 
-    
+
 
     def getNormalizedMessages(self, **kwargs):
         """Get the messages normalized
@@ -52,7 +52,7 @@ class MessagesApi(object):
 
             order, str: Desired sort order: 'asc' or 'desc' (optional)
 
-            
+
 
         Returns: NormalizedMessagesEnvelope
         """
@@ -101,9 +101,9 @@ class MessagesApi(object):
 
         responseObject = self.apiClient.deserialize(response, 'NormalizedMessagesEnvelope')
         return responseObject
-        
 
-        
+
+
 
     def postMessage(self, body, **kwargs):
         """POST a message
@@ -111,7 +111,7 @@ class MessagesApi(object):
         Args:
             body, Message: Message (required)
 
-            
+
 
         Returns: MessageIDEnvelope
         """
@@ -142,9 +142,9 @@ class MessagesApi(object):
 
         responseObject = self.apiClient.deserialize(response, 'MessageIDEnvelope')
         return responseObject
-        
 
-        
+
+
 
     def getNormalizedMessagesLast(self, sdids, count, **kwargs):
         """Get the last few Normalized messages
@@ -156,7 +156,7 @@ class MessagesApi(object):
 
             count, integer: count (required)
 
-            
+
 
         Returns: NormalizedMessagesEnvelope
         """
@@ -193,9 +193,9 @@ class MessagesApi(object):
 
         responseObject = self.apiClient.deserialize(response, 'NormalizedMessagesEnvelope')
         return responseObject
-        
 
-        
+
+
 
     def getNormalizedMessagesAggregates(self, sdid, field, **kwargs):
         """Get aggregates on normalized messages on a field
@@ -209,7 +209,7 @@ class MessagesApi(object):
 
             endDate, long: endDate (optional)
 
-            
+
 
         Returns: AggregatesEnvelope
         """
@@ -248,9 +248,9 @@ class MessagesApi(object):
 
         responseObject = self.apiClient.deserialize(response, 'AggregatesEnvelope')
         return responseObject
-        
 
-        
+
+
 
     def getNormalizedMessagesPresence(self, sdid, fieldPresence, interval, **kwargs):
         """Get the presence of a field
@@ -266,7 +266,7 @@ class MessagesApi(object):
 
             endDate, long: endDate (optional)
 
-            
+
 
         Returns: FieldPresenceEnvelope
         """
@@ -307,9 +307,9 @@ class MessagesApi(object):
 
         responseObject = self.apiClient.deserialize(response, 'FieldPresenceEnvelope')
         return responseObject
-        
 
-        
+
+
 
     def getRawMessages(self, **kwargs):
         """Get raw messages
@@ -327,7 +327,7 @@ class MessagesApi(object):
 
             order, str: Desired sort order: 'asc' or 'desc' (optional)
 
-            
+
 
         Returns: RawMessagesEnvelope
         """
@@ -370,9 +370,9 @@ class MessagesApi(object):
 
         responseObject = self.apiClient.deserialize(response, 'RawMessagesEnvelope')
         return responseObject
-        
 
-        
+
+
 
     def exportNormalizedMessages(self, **kwargs):
         """Export Normalized messages
@@ -388,7 +388,7 @@ class MessagesApi(object):
 
             format, str: Format the export will be returned as.  (optional)
 
-            
+
 
         Returns: ExportEnvelope
         """
@@ -429,9 +429,9 @@ class MessagesApi(object):
 
         responseObject = self.apiClient.deserialize(response, 'ExportEnvelope')
         return responseObject
-        
 
-        
+
+
 
     def checkExportStatus(self, exportId, **kwargs):
         """Check status of the export query.
@@ -439,7 +439,7 @@ class MessagesApi(object):
         Args:
             exportId, str: exportId (required)
 
-            
+
 
         Returns: ExportStatusEnvelope
         """
@@ -474,12 +474,3 @@ class MessagesApi(object):
 
         responseObject = self.apiClient.deserialize(response, 'ExportStatusEnvelope')
         return responseObject
-        
-
-        
-
-    
-
-
-
-

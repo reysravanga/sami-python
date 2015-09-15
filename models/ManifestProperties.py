@@ -21,10 +21,9 @@ class ManifestProperties:
 
     def __init__(self):
         self.swaggerTypes = {
-            'properties': 'str'
+            'properties': 'object'
 
         }
 
 
-        self.properties = None # str
-        
+        self.properties = None # object

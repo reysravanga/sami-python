@@ -28,7 +28,7 @@ class NormalizedMessage:
             'stdid': 'str',
             'uid': 'str',
             'mv': 'long',
-            'data': 'str'
+            'data': 'object'
 
         }
 
@@ -40,5 +40,4 @@ class NormalizedMessage:
         self.stdid = None # str
         self.uid = None # str
         self.mv = None # long
-        self.data = None # str
-        
+        self.data = None # object

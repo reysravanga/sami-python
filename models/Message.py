@@ -24,7 +24,7 @@ class Message:
             'sdid': 'str',
             'ddid': 'str',
             'ts': 'long',
-            'data': 'str'
+            'data': 'object'
 
         }
 
@@ -33,4 +33,3 @@ class Message:
         self.ddid = None # str
         self.ts = None # long
         self.data = None # str
-        

@@ -101,7 +101,7 @@ class ApiClient:
 
         if type(obj) == type(None):
             return None
-        elif type(obj) in [str, int, long, float, bool]:
+        elif type(obj) in [str, int, long, float, bool, object]:
             return obj
         elif type(obj) == list:
             return [self.sanitizeForSerialization(subObj) for subObj in obj]
@@ -206,5 +206,3 @@ class MethodRequest(urllib2.Request):
 
     def get_method(self):
         return getattr(self, 'method', urllib2.Request.get_method(self))
-
-
