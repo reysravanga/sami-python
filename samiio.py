@@ -143,7 +143,7 @@ class ApiClient:
                 subClass = match.group(1)
                 return [self.deserialize(subObj, subClass) for subObj in obj]
 
-            if (objClass in ['int', 'float', 'long', 'dict', 'list', 'str', 'bool', 'datetime']):
+            if (objClass in ['int', 'float', 'long', 'dict', 'list', 'str', 'bool', 'datetime', 'object']):
                 objClass = eval(objClass)
             else:  # not a native type, must be model class
                 objClass = eval(objClass + '.' + objClass)
@@ -156,6 +156,8 @@ class ApiClient:
             # last 5 characters.
             return datetime.datetime.strptime(obj[:-5],
                                               "%Y-%m-%dT%H:%M:%S.%f")
+        elif objClass == object:
+            return obj
 
         instance = objClass()
 
