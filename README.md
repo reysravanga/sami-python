@@ -17,7 +17,7 @@ Download the SAMI Python SDK and put it in your Python's search path. Then use S
 Example: Send a Message
 ---------------------
 
-1. Replace "YOUR DEVICE ID" and "YOUR DEVICE TOKEN" in `exampleSendMessage.py` with your device id and token.
+1. Replace "YOUR DEVICE ID" and "YOUR DEVICE TOKEN" in `exampleSendMessage.py` with the ID and token of your "SAMI Demo IPhonePedometer" device.
 2. Run the script in the console and observe the output like the following
 ~~~
 $ python exampleSendMessage.py 
@@ -29,6 +29,7 @@ The message was Sent.
     Message ID: c23a819f13fc4d0db4ffb6d83ff9b10d
 ~~~
 
+
 Example: Get a Message
 ---------------------
 
@@ -36,12 +37,14 @@ Example: Get a Message
 2. Run the script in the console and observe the output like the following
 ~~~
 $ python exampleGetMessage.py 
-SAMI Python Tutorial App -- Get a message
+SAMI Python Example -- Get the last normalized message
 -----------------------
-Got the last normalized message:{u'distance': 1.1, u'floorsAscended': 2, u'stepCount': 2000, u'floorsDescended': 5}
+
+Got the last normalized message:{u'distance': 1.1, u'floorsAscended': 2, u'stepCount': 2000, u'floorsDescended': 10}
 ~~~
 
 For a more complete list of examples see our demo application at https://github.com/samsungsamiio/sami-python-demo
+
 
 More about SAMI
 ---------------

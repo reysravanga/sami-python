@@ -28,7 +28,7 @@ message.sdid = deviceID
 message.type = "message"
 
 # message.data contains the device JSON message
-# Data below is JSON for the SAMI Demo Pedometer
+# Data below is JSON for the SAMI Demo IPhonePedometer
 message.data = {'numberOfSteps':2000, 'distance': 1.1, 'floorsAscended': 2, 'floorsDescended': 10}
 
 print 'Sending message: ' + str(message.data)
