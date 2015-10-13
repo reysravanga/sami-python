@@ -12,40 +12,34 @@ Prerequisites
 Installation
 ---------------------
 
-Once you have installed the required libraries add the scripts to your project.
+Download the SAMI Python SDK and put it in your Python's search path. Then use SAMI APIs from the SDK in your python scripts.
 
-```
-#!/usr/bin/env python
+Example: Send a Message
+---------------------
 
-accessToken = "<sami-access-token>"
+1. Replace "YOUR DEVICE ID" and "YOUR DEVICE TOKEN" in `exampleSendMessage.py` with your device id and token.
+2. Run the script in the console and observe the output like the following
+~~~
+$ python exampleSendMessage.py 
+SAMI Python example - Send a message to SAMI
+-----------------------
 
-print 'SAMI Python Demo Client'
-print '-----------------------'
+Sending message: {'numberOfSteps': 2000, 'distance': 1.1, 'floorsAscended': 2, 'floorsDescended': 10}
+The message was Sent.
+    Message ID: c23a819f13fc4d0db4ffb6d83ff9b10d
+~~~
 
-from samiio import ApiClient
-apiClient = ApiClient(apiKey=accessToken, apiServer = "https://api.samsungsami.io/v1.1")
+Example: Get a Message
+---------------------
 
-from MessagesApi import MessagesApi
-messagesApi = MessagesApi(apiClient)
-
-from models import *
-message = Message.Message()
-
-message.sdid = "<source-device-id>"
-message.type = "message"
-
-# message.data contains the device JSON message
-# Data below is JSON for the SAMI Pedometer
-message.data = {'numberOfSteps':2000, 'distance': 1.1, 'floorsAscended': 2, 'floorsDescended': 0}
-
-print 'Sending message:'
-print message.data
-
-messageIDEnvelope = messagesApi.sendMessageAction(body=message)
-
-print 'Sent.'
-print '    Message ID: ' + messageIDEnvelope.data.mid
-```
+1. Replace "YOUR DEVICE ID" and "YOUR DEVICE TOKEN" `exampleGetMessage.py` with your device ID and token.
+2. Run the script in the console and observe the output like the following
+~~~
+$ python exampleGetMessage.py 
+SAMI Python Tutorial App -- Get a message
+-----------------------
+Got the last normalized message:{u'distance': 1.1, u'floorsAscended': 2, u'stepCount': 2000, u'floorsDescended': 5}
+~~~
 
 For a more complete list of examples see our demo application at https://github.com/samsungsamiio/sami-python-demo
 
@@ -56,7 +50,7 @@ If you are not familiar with SAMI we have extensive documentation at http://deve
 
 The full SAMI API specification with examples can be found at http://developer.samsungsami.io/sami/api-spec.html
 
-We blog about advanced sample applications at http://blog.samsungsami.io/
+Peek into advanced sample applications at https://developer.samsungsami.io/sami/samples/
 
 To create and manage your services and devices on SAMI visit developer portal at http://devportal.samsungsami.io
 
@@ -65,4 +59,4 @@ Licence and Copyright
 
 Licensed under the Apache License. See LICENCE.
 
-Copyright (c) 2014 Samsung Electronics Co., Ltd.
+Copyright (c) 2015 Samsung Electronics Co., Ltd.
